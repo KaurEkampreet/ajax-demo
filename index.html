@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Demo</title>
+</head>
+<body>
+<button id="poem">Display a button</button>
+<button id="phrase">Show a Phrase</button>
+<hr>
+    <div id="result"></div>
+</body>
+
+<script src="//code.jquery.com/jquery.js"></script>
+<script>$("#poem").on('click',function(){
+    //alert ("roses are red");
+ //   $("#result").html("Roses are red");
+    $("#result").load('poem.txt');
+});
+// use ajax to run a php script
+$("#phrase").on('click',function() {
+   // let name = $("first-name").val();
+    $("#result").load("showphrase.php",
+        {num: 3, name: "joe"},
+        function() {
+            alert("I'm done");
+    }
+    );
+})
+
+//use ajax t run a php script
+    /*
+    1. display an alert
+    2. update text in the div
+    3. execute a php script
+     */
+</script>
+</html>
